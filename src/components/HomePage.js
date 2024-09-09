@@ -29,10 +29,10 @@ const HomePage = ({ articles, articles2, articles3, articles4, featuredArticle, 
     return (
         <main className="container mx-auto px-4 py-8">
             <div className="grid lg:grid-cols-3 lg:gap-6 grid-col-1 gap-3">
-                <FeaturedArticle articles={featuredData} />
+                {featuredData && featuredData[0] && <FeaturedArticle articles={featuredData} />}
                 <div className="flex lg:flex-col gap-1">
-                    <SideArticle category="sports" article={data6} />
-                    <SideArticle category="technology" article={data7} />
+                    {data6 && data6[0] && <SideArticle category="sports" article={data6} />}
+                    {data7 && data7[0] && <SideArticle category="technology" article={data7} />}
                 </div>
             </div>
             <section className="mt-8">

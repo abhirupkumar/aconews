@@ -5,15 +5,10 @@ import React, { useEffect, useState } from 'react'
 
 export const FeaturedArticle = ({ articles }) => {
 
-    const [data, setData] = useState({
-        image: 'https://via.placeholder.com/800x400',
-        title: '',
-        url: '#'
-    });
+    const [data, setData] = useState(articles[0]);
 
     useEffect(() => {
-        if (articles && articles.length > 0)
-            setData(articles[0]);
+        setData(articles[0]);
     }, [articles]);
 
     return <>{<div className="col-span-2 relative">

@@ -4,15 +4,10 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const SideArticle = ({ category, article }) => {
-    const [data, setData] = useState({
-        image: 'https://via.placeholder.com/800x400',
-        title: '',
-        url: '#'
-    });
+    const [data, setData] = useState(article[0]);
 
     useEffect(() => {
-        if (article && article.length > 0)
-            setData(article[0]);
+        setData(article[0]);
     }, [article]);
 
     return (
